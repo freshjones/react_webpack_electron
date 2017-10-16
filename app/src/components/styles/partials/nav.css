@@ -1,0 +1,29 @@
+
+nav a
+{
+  border-left:5px solid var(--silver);
+}
+nav .active
+{
+  border-left:5px solid var(--green);
+  background:darken($silver,5%);
+}
+
+main nav ul
+{
+  border-bottom:3px solid var(--silver);
+}
+
+main nav a
+{
+   border-left:none;
+   margin-bottom:-3px;
+}
+
+main nav .active
+{
+   border-left:none;
+   background:none;
+   border-bottom:3px solid var(--green);
+}
+

@@ -1,3 +1,5 @@
 require('react')
 require('react-dom')
 require('react-hot-loader')
+require('react-router')
+require('react-router-dom')

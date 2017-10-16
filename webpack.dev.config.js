@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var DllLinkPlugin = require('dll-link-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   cache:true,
@@ -13,7 +14,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
   },
   resolve: {
     extensions: [".jsx", ".js"]
@@ -23,10 +24,15 @@ module.exports = {
     hot: true
   },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     new DllLinkPlugin({
       config: require('./webpack.vendor.config.js'),
       htmlMode: true,
       assetsMode: true
+    }),
+    new HtmlWebpackPlugin({
+      template: 'index.template.ejs',
+      inject: 'body',
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
@@ -41,7 +47,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader","css-loader"]
+        use: [
+          "style-loader",
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          "postcss-loader"
+        ]
       }
     ]
   }

@@ -1,0 +1,7 @@
+@import './variables/colors.css';
+
+@import './partials/base.css';
+@import './partials/nav.css';
+@import './partials/grid.css';
+
+@import './components/dashboard.css';
