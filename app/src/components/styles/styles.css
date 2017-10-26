@@ -1,7 +1,12 @@
 @import './variables/colors.css';
+@import './variables/borders.css';
+@import './variables/spacing.css';
 
 @import './partials/base.css';
 @import './partials/nav.css';
 @import './partials/grid.css';
 
 @import './components/dashboard.css';
+@import './components/overlay.css';
+
+@import './partials/overrides.css';

@@ -1,0 +1,16 @@
+.note-title
+{
+  border:none;
+  height: 40px;
+  padding-top: 10px;
+  font-size: 30px;
+  padding-bottom: 0;
+  color:var(--green);
+}
+
+.note-title:focus,
+.note-title:active
+{
+  border:none;
+  outline:none;
+}

@@ -14,6 +14,11 @@ main nav ul
   border-bottom:3px solid var(--silver);
 }
 
+main nav ul ul
+{
+  border:none;
+}
+
 main nav a
 {
    border-left:none;

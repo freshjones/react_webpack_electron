@@ -1,0 +1,15 @@
+
+.note-form
+{
+  border:none;
+  height: 100%;
+  width:100%;
+  font-size:125%;
+}
+
+.note-form:focus,
+.note-form:active
+{
+  border:none;
+  outline:none;
+}
